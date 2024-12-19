@@ -45,7 +45,7 @@ map-base: Esri_NatGeoWorldMap # set default base map, choose from: Esri_WorldStr
 map-search: false # true/false, not suggested with large collections
 map-search-fuzziness: 1 # fuzzy search range from 1 = anything to 0 = exact match only
 map-cluster: true # true/false, suggested for large collection or with many items in same location
-map-cluster-radius: 10 # size of clusters, from ~ 10 to 80
+map-cluster-radius: 25 # size of clusters, from ~ 10 to 80
 
 ##########
 # TIMELINE PAGE
@@ -93,7 +93,7 @@ navbar-background: bg-dark
 bootswatch: # leave blank or comment out for plain bootstrap
 
 # THEME FONTS
-base-font-size: 1.2em
+base-font-size: 1.2rem
 text-color: "#191919"
 link-color: "#17a2b8"
 base-font-family: 'Fraunces'

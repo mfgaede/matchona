@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Team 
-order: 3
+order: 4
 object-id: team
 permalink: /team.html
 ---

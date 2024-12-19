@@ -1,16 +1,10 @@
-# Oral History as Data
+# Matchona
+## Malawians on the Move in 20th Century Southern Africa
 
-This is the Template Repository for the Oral History as Data Project. You can "Use This Template" to copy the contents of this project and replace them with your own.
+This project is based on the [Oral History as Data](https://oralhistoryasdata.github.io/) framework and uses elements of [CollectionBuilder](https://collectionbuilder.github.io/)) to include documents related to individual oral histories.
 
-Oral History as Data (OHD) provides a static web framework for users to publish and analyze coded oral history and qualitative interviews on the web. 
+[Documentation for the earlier version of Oral History as Data](https://uidaholib.github.io/oral-history-as-data/about.html) is available from the University of Idaho, as well as [a lesson plan](https://learn-static.github.io/oral-history-as-data/). These resources were extremely valuable in the development of this project, as was the excellent [documentation for CollectionBuilder](https://collectionbuilder.github.io/cb-docs/).
 
-You might also check out the [a demo site](https://oralhistoryasdata.github.io/) for this project, which is a branch of this repository. 
+### About this Project
 
-Here is some [documentation to get you started](https://oralhistoryasdata.github.io/about.html#documentation). More fully developed documentation for this project is being developed, but there are several places linked here to get you started.
-
-### About Oral History as Data
-
-Oral History as Data was first built in 2018, coming out of work at the University of Idaho Library's [Center for Digital Inquiry and Learning (CD?L)](https://cdil.lib.uidaho.edu/). 
-The framework served as the foundation for several digital humanities projects, including [Voices of Gay Rodeo](https://www.voicesofgayrodeo.com/), [Idaho Queered](https://www.lib.uidaho.edu/queered/), and [CTRL+Shift](https://ctrl-shift.org/). 
-
-The project is closely related to the [CollectionBuilder](https://collectionbuilder.github.io/) project, and the current iteration was built on top of a CollectionBuilder-GH template.
+Matchona was built to share the collaborative oral history work of a group of historians from Malawi, the United Kingdom, and the United States. I will endeavor to better document and rationalize the customizations I've made, which include small galleries of documents and photographs on transcript pages and clusters of subjects for easier browsing. 

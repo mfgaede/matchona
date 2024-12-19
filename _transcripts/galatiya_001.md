@@ -1,7 +1,7 @@
 ---
 object-id: galatiya_001
 title: Agnes Galatiya 
-date-interviewed: December 2, 2008
+date-interviewed: February 12, 2008
 interviewer: in Chichewa with Lucy Phiri & Zoë Groves
 location: Dzoole, Malawi
 objectid: galatiya_001

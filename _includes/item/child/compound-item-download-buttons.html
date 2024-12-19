@@ -5,10 +5,11 @@
     Styled as a Bootstrap btn-group.
 
 {%- endcomment -%}
-<div class="btn-group my-3" role="group" aria-label="Item options">
-    {% if page.date %}{%- capture year -%}{% if page.date contains "-" %}{{ page.date | split: "-" | first }}{% elsif page.date contains "/" %}{{ page.date | split: "/" | last }}{% else %}{{ page.date }}{% endif %}{%- endcapture -%}
-    <a href="{{ year | strip | prepend: '/timeline.html#y' | relative_url }}" class="btn btn-outline-primary">View on Timeline</a>{% endif %}
-    {% if page.latitude and page.longitude %}
+<div class="btn-group my-3 w-75 justify-content-center" role="group" aria-label="Item options">
+    {% if page.custom_button_url %}
+    <a href="{{ page.custom_button_url }}" class="btn btn-dark btn-lg">View Interview</a>
+    {% endif %}
+    <!--{% if page.latitude and page.longitude %}
     <a href="{{ '/map.html?location=' | append: page.latitude  | append: ',' | append: page.longitude | append: '&marker=' | append: page.objectid | relative_url }}" class="btn btn-outline-primary">View on Map</a>{% endif %}
 
     <div class="btn-group" role="group">
@@ -27,6 +28,6 @@
             </li>
             {% endunless %}
             {% endfor %}
-        </ul>
+        </ul> -->
     </div>
 </div>
