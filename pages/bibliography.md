@@ -64,6 +64,8 @@ Kubik, Gerhard. *The Kachamba Brothers' Band: A study of neo-traditional music i
 
 Lovett, Margot, L. "From Sisters to Wives to 'Slaves': Redefining Matriliny and the Lives of Lakeside Tonga Women, 1885-1955." *Critique of Anthropology*,vol. 17, no. 2, 1997, pp. 171-187. <https://doi.org/10.1177/0308275X9701700204>  
 
+<a id="macdonald"></a>Macdonald, Robert. "Using Written Consent Forms When Conducting Non-Elite Qualitative Research: Reflections from Zambia." *Journal of Southern African Studies*, vol. 50, no. 2, 2024, pp. 195-206. <https://doi.org/10.1080/03057070.2024.2386650>
+
 Mitchell [now Dee], Henry, *Independent Africans. Migration from Colonial Malawi to the Union of South Africa, c.1935-1961.* (University of Edinburgh MSc thesis, 2014). <https://www.academia.edu/8987110/Independent_Africans_Migration_from_Colonial_Malawi_to_South_Africa_c_1935_1961> {% include feature/button.html text="Download PDF" link="objects/mitchell001.pdf" %}
 
 Mudeka, Ireen. "Gendered Exclusion and Contestation: Malawian Women’s Migration and Work in Colonial Harare, Zimbabwe, 1930s to 1963." *African Economic History*, vol. 44, 2016, pp. 18–43. <https://doi.org/10.1353/aeh.2016.0001>

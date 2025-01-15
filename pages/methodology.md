@@ -10,7 +10,7 @@ permalink: methodology.html
 
 These interviews were conducted between 2006 and 2023 as part of the team’s separate research projects, ranging from MA to PhD to second book projects. Henry Dee curated a set of labor testimonials from the South African National Archives, focusing mostly on the 1920s.  
 
-Aligned with the Oral History Association’s *Principles and Best Practices* from 2009 and 2018 and given the limitations of language and literacy, verbal informed consent was sought from all participants. All gave their permission for their names to be used in publication. Julie Weise, having conceived of this project, sought specific permission to include interviews and other contextual materials on this site in 2022-2023. 
+Aligned with the Oral History Association’s *Principles and Best Practices* from 2009 and 2018  and given the challenges of translating legal language into Malawian languages and in a context of varied literacies, verbal informed consent was sought from all participants. ([Macdonald 2024](bibliography.html#macdonald)) All gave their permission for their names to be used in publication. Julie Weise, having conceived of this project, sought specific permission to include interviews and other contextual materials on this website in 2022-2023.
 
 Today, former migrant workers struggle for recognition and, in some cases, compensation for their labor and injuries. This was reflected in our interviews where interviewees repeatedly expressed a desire for their stories to be shared with the public and preserved for their families and communities. To date, no public-facing project has shared this history.  
 
@@ -32,6 +32,6 @@ If you have a concern about any of the materials on *Matchona*, please contact [
 
 ## Harmful content
 
-The materials contained within *Matchona* reflect the personal viewpoints, recollections, and opinions of former migrant workers and their families who participated in oral history interviews from 2006-2023, as well as individuals who contributed to colonial documentation in the early 20th century. As such, you may encounter offensive language, overt expressions of bigotry or bias, outdated cultural or geographical references, and / or stereotypes. Such content is often important to document as evidence of past and present injustices and is presented here out of a desire to preserve these oft-forgotten stories and to grant the reach and accessibility of digital presentation.
+The materials contained within *Matchona* reflect the personal viewpoints, recollections, and opinions of former migrant workers and their families who participated in oral history interviews from 2006-2023, as well as individuals who contributed to colonial documentation in the early 20th century. As such, you may encounter offensive language, overt expressions of bigotry or bias, outdated cultural or geographical references, and / or stereotypes. Such content is often important to document as evidence of past and present injustices and is presented here out of a desire to preserve these oft-forgotten stories and increase their accessibility via digital presentation.
 
 We welcome feedback. If you have information, questions, or concerns about the contents of *Matchona*, please email [jweise@uoregon.edu](mailto:jweise@uoregon.edu?subject=Matchona%20harmful%20content).
