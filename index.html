@@ -1,0 +1,63 @@
+---
+title: Home
+layout: cover
+---
+     {% assign nav = site.data.config-nav | map: 'stub' %}
+     {% capture nav_contents %}{%for n in nav%}{{n}}{%endfor%}{% endcapture %}
+<div class="cover-container d-flex w-100 h-100 p-x3 pb-3 mx-auto flex-column align-self-center">
+
+  
+    <main class="px-3 h-100">
+        <div class="row h-100">
+
+        <div class="col-md my-auto">
+      <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-soundwave me-1 pt-4" viewBox="0 -2 16 16" style="width: 3em;height: 3em;">
+            <path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z"/>
+          </svg><br>
+        <strong>{{ site.title }}</strong>
+      </h1>
+      <p class="lead">{{site.tagline}}</p>
+      <p class="lead secondary-tagline">{{site.secondary_tagline}}</p>
+      <p class="lead">
+        
+        <a href="about.html" class="btn btn-lg btn-secondary fw-bold mt-3">About<br />Zokhuzana</a> <br>
+        <a href="transcripts.html" class="btn btn-lg btn-secondary fw-bold mt-3">Interviews<br />Mafunso</a><br>
+        {% if nav_contents contains 'subjects'%}
+        <a href="subjects.html" class="btn btn-lg btn-secondary fw-bold mt-3">Subjects<br />Maphunziro</a>{% endif %}
+       
+
+      </p>
+      </div>
+      {% if nav_contents contains 'subjects'%}
+   <div class="col-md w-75 mx-auto my-auto">
+    {% for transcript in site.data.transcripts %}
+    {% assign height_integer = forloop.length %}
+        {% assign height_float = height_integer | times: 1.0 %}
+    {% assign rect-height = 100 | divided_by: height_float  %}
+    {%assign transcript-name = transcript[0] %}
+    <div class="vizdiv" style="height:{{rect-height}}%">
+      <a href="{{ '/subjects.html' | relative_url }}"><svg class="chart {{transcript-name}}" width="100%" height="20" style="overflow: visible">
+        {% for item in transcript[1] %}
+        {% assign my_integer = forloop.length %}
+        {% assign my_float = my_integer | times: 1.0 %}
+        {% assign rect-width = 100 | divided_by: my_float  %}
+          <rect x="{{forloop.index0 | times: rect-width }}%" y="20" width="{{rect-width}}%" height="50" data-toggle="tooltip" data-placement="top" class="{{item.tags | downcase | replace: ';', ' '}}" title=" {% if item.tags %}(Subjects: {{ item.tags | replace: ';', ', ' }}){%endif%}"></rect>
+        {%endfor%}</svg></a>
+    </div>{%endfor%}
+   </div>
+   {% endif %}
+        </div>
+    </main>
+  
+    <footer class="mt-auto text-white-50">
+      {% if site.organization-logo-nav %} <p class="text-end">
+       <p><a href="{{ site.organization-link }}" target="_blank" rel="noopener">
+            <img id="footer-logo" class="img-fluid" src="{{ site.organization-logo-nav | relative_url }}" alt="{{ site.organization-name }} home">
+        </a></p> 
+    </p>{% elsif site.organization-link %}
+    <p>A <a href="{{ site.organization-link }}" class="text-white">{{ site.organization-name }}</a> project.</p>
+    {% endif %}
+    </footer>
+  </div>
+        

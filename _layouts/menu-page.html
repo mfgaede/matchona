@@ -1,0 +1,70 @@
+---
+layout: default
+---
+<div class="container my-4">
+    <div class="row">
+        <!-- Secondary menu -->
+        <div class="col-md-3">
+            <nav class="secondary-menu">
+                <h4>About</h4>
+                <ul class="nav flex-column" id="section-nav">
+                    {% for item in site.data.secondary_menu %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <!-- Main content -->
+        <div class="col-md-9 content">
+            <h1 class="page-title mb-4">{{ page.title }}</h1>
+            {{ content }}
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Select headers but exclude those with class 'exclude-from-nav'
+    const headers = document.querySelectorAll('.content h2:not(.exclude-from-nav), .content h3:not(.exclude-from-nav)');
+    const sectionNav = document.querySelector('#section-nav');
+    const activeNavItem = sectionNav.querySelector('.nav-link.active');
+    
+    if (headers.length > 0 && activeNavItem) {
+        // Find the parent li of the active link
+        const activeListItem = activeNavItem.closest('li');
+        
+        // Create a container for page section links
+        const pageSectionsUl = document.createElement('ul');
+        pageSectionsUl.className = 'nav flex-column ms-3 mt-1 page-sections';
+        
+        // Add headers to the section list
+        headers.forEach(function(header) {
+            // Create an id if the header doesn't have one
+            if (!header.id) {
+                header.id = header.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+            }
+            
+            // Create list item
+            const li = document.createElement('li');
+            li.className = 'nav-item';
+            
+            // Add additional indentation for h3
+            const indent = header.tagName === 'H3' ? 'ms-2' : '';
+            
+            // Create link
+            const a = document.createElement('a');
+            a.className = `nav-link ${indent} small py-1`;
+            a.href = '#' + header.id;
+            a.textContent = header.textContent;
+            
+            li.appendChild(a);
+            pageSectionsUl.appendChild(li);
+        });
+        
+        // Insert the sections list after the active navigation item
+        activeListItem.appendChild(pageSectionsUl);
+    }
+});
+</script>

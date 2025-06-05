@@ -1,0 +1,70 @@
+##########
+# URL VARIABLES [optional if using GitHub Pages!]
+##########
+url: https://matchona.org
+source-code: https://github.com/mfgaede/matchona
+
+##########
+# SITE SETTINGS
+##########
+title: Matchona
+tagline: Malawians on the Move in 20th Century Southern Africa
+secondary_tagline: A resource for teaching, research, and advocacy
+description: "Malawian migrants, known as “matchona,” navigated family expectations and personal aspirations across borders. Explore their stories in this digital archive."
+author: Julie Weise, Zoe Groves, Henry Dee, Elias Mandala, and Anusa Daimon
+
+##########
+# COLLECTION SETTINGS
+##########
+metadata: demo-metadata 
+
+##########
+# GOOGLE SERVICES [optional!]
+##########
+# leave these blank or comment out to NOT include google code. See docs/google.md
+#
+# Add your google-analytics-id to automatically add the embed code, e.g. "UA-76328753-1"
+google-analytics-id: G-KCD6Y742EN
+# to populate a Google CSE add the id, e.g. "002151703305773322890:1pu3smhw1t8"
+# google-cse-id: 
+
+##########
+# ROBOTS EXCLUDE
+#
+# set noindex to true if you do NOT want Google to index your site
+# noindex: true 
+
+##########
+# BUILD SETTINGS 
+#
+# Note: use environment variable on build command to include analytics
+# JEKYLL_ENV=production jekyll build
+# (this is done automatically by gh-pages build)
+#
+# ignore stuff
+exclude: [docs/, Rakefile, README.md, LICENSE]
+# compress CSS output
+sass:
+  style: compressed
+  silence_deprecations: always
+
+####### Leave the Below As Is ########
+
+# Jekyll collections settings
+collections:
+  transcripts:
+    output: true
+    permalink: /:collection/:title
+  howto:
+    output: true
+    permalink: /:collection/:name
+# defaults
+defaults:
+  - scope:
+      type: transcripts
+    values:
+      layout: transcript
+  - scope:
+      type: howto
+    values:
+      layout: howto

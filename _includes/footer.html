@@ -1,0 +1,57 @@
+<footer class="bg-dark pt-4 mt-auto container-fluid">
+
+    <div class="row pb-4 mb-2">
+        <!-- Column 1 - title and taglines -->
+        <div class="col-md-4 px-4 mt-2">
+            <h4><a href="{{ '/' | relative_url }}" class="text-white title">{{ site.title }}</a></h4>
+            <p class="text-white tagline"><small>{{ site.tagline }}</small></p>
+            <p class="text-white secondary-tagline"><small>{{ site.secondary_tagline }}</small></p>
+        </div>
+
+<!-- Column 2 - navigation -->
+<div class="col-md-4 px-4 mt-2">
+    <nav>
+        <ul id="footer-nav" class="nav nav-pills d-flex flex-row flex-wrap justify-content-center">
+            {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%}
+            {% for nav in navItems %}
+            <li class="nav-item mx-1 mb-2">
+            {% if nav.stub %}
+                <a class="nav-link text-light px-2 py-1{% if page.url == nav.stub %} active{% endif %}" href="{{ nav.stub | relative_url }}">{{ nav.display_name }}</a>
+            {%- else -%}
+            {% assign childStub = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nav.display_name' | first %}
+                <a class="nav-link text-light px-2 py-1{% if page.url == childStub.stub %} active{% endif %}" href="{{ childStub.stub | relative_url }}">{{ nav.display_name }}</a>
+            {% endif %}
+            </li>
+            {%- endfor -%}
+        </ul>
+    </nav>
+</div>
+
+<!-- Column 3 - credit and licensing -->
+<div class="col-md-4 mt-2">
+    <!-- License section - already centered -->
+    <div class="text-center mb-3">
+        <p><a href="https://rightsstatements.org/page/InC-EDU/1.0/?language=en"><img src="/assets/img/education.png" alt="In Copyright - Educational Use Permitted"></a></p>
+        <p class="text-white">© {{ site.time | date: '%Y' }}</p>
+    </div>
+    
+    <!-- Collection Builder credits - now centered -->
+    <div class="text-center">
+        {% if site.organization-logo-nav %}
+        <p>
+            <a href="{{ site.organization-link }}" target="_blank" rel="noopener">
+                <img id="footer-logo" class="img-fluid" src="{{ site.organization-logo-nav | relative_url }}" alt="{{ site.organization-name }} home">
+            </a>
+        </p>
+        {% endif %}
+        <p class="text-white" id="footer-credits">
+            <small><em>built with</em>
+                <a href="https://collectionbuilder.github.io/" target="_blank" rel="noopener" title="CollectionBuilder">
+                    <img src="{{ '/assets/img/collectionbuilder-logo.png' | relative_url }}" class="img-fluid" alt="CollectionBuilder logo" >
+                </a>
+            </small>
+        </p>
+    </div>
+</div>
+    </div>
+</footer>

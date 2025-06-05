@@ -1,0 +1,9 @@
+<script>
+    var mediaElement = document.getElementById('audio-player');
+
+    $('.timestamp-link').click( function(){
+        var timeSought = $(this).data('timestamp');
+        mediaElement.currentTime = timeSought;
+        mediaElement.play();
+    });
+</script>

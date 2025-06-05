@@ -1,0 +1,143 @@
+/* 
+    Put your custom SCSS here! 
+    This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
+*/
+
+
+@media print {
+    
+    html, body {
+      height:100%; 
+      margin: 0 !important; 
+      padding: 0 !important;
+      overflow: visible;
+      display: block;
+      font-size: 1.2rem;
+    }
+}
+
+
+.iframe-wrapper{
+position: fixed;
+  right: 10px;
+  height: fit-content;
+  width: 370px;
+  bottom: 25vw;
+  transition: all 1s linear;
+  .meta{display: none;}
+  .row{display: none;}
+@media (max-width: 900px) {
+    display:none;
+}
+}
+
+.featured{display:block;float:none; clear:both;}
+.linenum{ font-size:11px; float:left;width:auto;}
+.words{
+  @include media-query($on-palm) {min-width: 250px;}}
+
+
+.filteroptions, .searchinput{font-size:24px; 
+  @include media-query($on-palm) { font-size:18px;}}
+  
+
+
+.toggle_int:hover{color:pink}
+.toggle_int small{font-size:12px;}
+
+.featured {
+    background-color: #dbf1fd !important;
+  color: black !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: #212529 !important;
+}
+
+#banner {
+  width: 100%;
+  height: 300px;
+}
+
+#banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-header {
+  cursor: pointer;
+}
+
+.secondary-menu {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+}
+
+.secondary-menu .nav-link.active {
+  font-weight: bold;
+  color: #17a2b8;
+}
+
+.secondary-menu .nav-link {
+  color: #17a2b8;
+  font-size: 1.25rem;
+}
+
+/* Styles for the nested page sections */
+.page-sections {
+  border-left: 1px solid #dee2e6;
+  margin-left: 0.75rem !important;
+  margin-top: 0.1rem !important; /* Reduced top margin */
+}
+
+.page-sections .nav-link {
+  padding: 0.2rem 0.75rem;
+  font-size: 1.05rem;
+  color: #191919;
+}
+
+.page-sections .nav-link:hover {
+  color: #17a2b8;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+.secondary-tagline {
+  font-size: 1.2rem;
+  font-style: italic!important;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Custom colors for Key event tags */
+
+circle.\31 920s, rect.\31 920s { fill: #ff6b6b !important; }
+circle.\31 930s, rect.\31 930s { fill: #48dbfb !important; }
+circle.\31 940s, rect.\31 940s { fill: #1dd1a1 !important; }
+circle.\31 950s, rect.\31 950s { fill: #5f27cd !important; }
+circle.\31 960s, rect.\31 960s { fill: #ff9f43 !important; }
+circle.\31 964-malawian-independence, rect.\31 964-malawian-independence { fill: #54a0ff !important; }
+circle.\31 970s, rect.\31 970s { fill: #00d2d3 !important; }
+circle.\31 974-plane-crash, rect.\31 974-plane-crash { fill: #6c5ce7 !important; }
+circle.\31 980s, rect.\31 980s { fill: #ff9ff3 !important; }
+circle.\31 990s, rect.\31 990s { fill: #00cec9 !important; }
+
+/* Style for highlighted tags */
+.featured-filter .words {
+  display: inline-block;
+  border: 2px solid #17a2b8;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(23, 162, 184, 0.15);
+}
+
+/* Ensure non-filtered words have no border */
+.words {
+  border: none;
+  box-shadow: none;
+}
