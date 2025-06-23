@@ -1,0 +1,237 @@
+<!-- Multilingual Navigation with Language Toggle -->
+<style>
+/* Language toggle styles */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 4px;
+}
+
+.lang-toggle .lang-option {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255,255,255,0.7);
+    border: none;
+    background: transparent;
+}
+
+.lang-toggle .lang-option.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lang-toggle .lang-option:hover:not(.active) {
+    color: rgba(255,255,255,0.9);
+}
+
+.lang-en .chichewa { display: none; }
+.lang-ny .english { display: none; }
+
+/* Default to English */
+body:not(.lang-ny) .chichewa { display: none; }
+body.lang-ny .english { display: none; }
+
+.nav-text {
+    line-height: 1.2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+/* Language content transitions for search button */
+.multilingual-text {
+    position: relative;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+
+.lang-content {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: block;
+    line-height: 1.2;
+}
+
+.lang-en .chichewa, 
+.lang-ny .english { 
+    opacity: 0;
+    transform: translateY(-2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.lang-en .english, 
+.lang-ny .chichewa { 
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+/* Default to English for multilingual content */
+body:not(.lang-ny) .chichewa { 
+    opacity: 0;
+    transform: translateY(-2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+body:not(.lang-ny) .english { 
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+/* Ensure navbar items are vertically centered - only for main navbar */
+.navbar .navbar-nav {
+    align-items: center;
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px; /* Ensure consistent height */
+}
+
+/* Center the collapse content */
+.navbar .navbar-collapse {
+    align-items: center;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg {{ site.data.theme.navbar-color | default: 'navbar-dark' }} {{ site.data.theme.navbar-background | default: 'bg-dark' }}">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#page-nav" aria-controls="page-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        {% if site.organization-logo-nav %}<span class="d-lg-none text-end">
+            <a href="{{ site.organization-link }}" target="_blank" rel="noopener">
+                <img class="img-fluid" id="mobile-nav-image" src="{{ site.organization-logo-nav | relative_url }}" title="{{ site.organization-name }}" alt="{{ site.organization-name }} home">
+            </a>
+        </span>{% endif %}
+
+        <div class="collapse navbar-collapse align-items-center" id="page-nav">
+            <!-- Language Toggle -->
+            <div class="lang-toggle align-self-center">
+                <span class="lang-option" onclick="setLanguage('en')" id="nav-lang-en">EN</span>
+                <span class="lang-option" onclick="setLanguage('ny')" id="nav-lang-ny">NY</span>
+            </div>
+
+            <ul class="navbar-nav me-auto align-items-center">
+                {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%}
+                {% for nav in navItems %}
+                {% if nav.stub %}
+                <li class="nav-item">
+                    <a class="nav-link{% if page.url == nav.stub %} active{% endif %}" href="{{ nav.stub | relative_url }}">
+                        <div class="nav-text">
+                            <div class="english">{{ nav.display_name }}</div>
+                            <div class="chichewa">{{ nav.display_name_chichewa }}</div>
+                        </div>
+                    </a>
+                </li>
+                {%- else -%}
+                <li class="nav-item dropdown">
+                    {% assign navChildren = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nav.display_name' %}
+                    {%- assign childStubs = navChildren | map: 'stub' -%}
+                    <a class="nav-link dropdown-toggle{% if childStubs contains page.url %} active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="nav-text">
+                            <div class="english">{{ nav.display_name }}</div>
+                            <div class="chichewa">{{ nav.display_name_chichewa }}</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu">
+                        {% for c in navChildren %}
+                        <a class="dropdown-item {% if page.url == c.stub %}active{% endif %}" href="{{ c.stub | relative_url }}">
+                            <span class="english">{{ c.display_name }}</span>
+                            <span class="chichewa">{{ c.display_name_chichewa }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endif %}
+                {%- endfor -%}
+            </ul>
+
+            {% include nav-search-lunr.html %}
+        </div>
+    </div>
+</nav>
+
+<script>
+function setLanguage(lang) {
+    const body = document.body;
+    
+    // Remove existing language classes
+    body.classList.remove('lang-en', 'lang-ny');
+    
+    // Add new language class
+    body.classList.add('lang-' + lang);
+    
+    // Update toggle buttons for homepage, navigation, and footer
+    document.querySelectorAll('.lang-option').forEach(btn => btn.classList.remove('active'));
+    
+    // Update homepage toggle if it exists
+    const homeToggle = document.getElementById('home-lang-' + lang);
+    if (homeToggle) homeToggle.classList.add('active');
+    
+    // Update navigation toggle if it exists
+    const navToggle = document.getElementById('nav-lang-' + lang);
+    if (navToggle) navToggle.classList.add('active');
+    
+    // Update footer toggle if it exists
+    const footerToggle = document.getElementById('footer-lang-' + lang);
+    if (footerToggle) footerToggle.classList.add('active');
+    
+    // Update search placeholders
+    updateSearchPlaceholders();
+    
+    // Save preference
+    localStorage.setItem('language', lang);
+}
+
+function updateSearchPlaceholders() {
+    const isChichewa = document.body.classList.contains('lang-ny');
+    
+    // Update homepage search placeholder
+    const homeSearch = document.getElementById('home-search');
+    if (homeSearch) {
+        homeSearch.placeholder = isChichewa ? 'Sakani' : 'Search';
+    }
+    
+    // Update navigation search placeholder
+    const navSearch = document.getElementById('site-search');
+    if (navSearch) {
+        navSearch.placeholder = isChichewa ? 'Sakani' : 'Search';
+    }
+}
+
+// Backward compatibility - keep toggleLanguage for any existing references
+function toggleLanguage() {
+    const isChichewa = document.body.classList.contains('lang-ny');
+    setLanguage(isChichewa ? 'en' : 'ny');
+}
+
+// Load saved language preference or default to English
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('language') || 'en';
+    setLanguage(savedLang);
+});
+</script>

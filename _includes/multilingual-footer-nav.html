@@ -1,0 +1,126 @@
+<!-- Multilingual Footer Navigation -->
+<style>
+.footer-lang-toggle {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 4px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-lang-toggle .lang-option {
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255,255,255,0.7);
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+}
+
+.footer-lang-toggle .lang-option.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.footer-lang-toggle .lang-option:hover:not(.active) {
+    color: rgba(255,255,255,0.9);
+}
+
+.footer-nav-text {
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+}
+
+/* Language content transitions */
+.multilingual-text {
+    position: relative;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+
+.lang-content {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: block;
+    line-height: 1.2;
+}
+
+.lang-en .chichewa, 
+.lang-ny .english { 
+    opacity: 0;
+    transform: translateY(-2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.lang-en .english, 
+.lang-ny .chichewa { 
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+/* Default to English */
+body:not(.lang-ny) .chichewa { 
+    opacity: 0;
+    transform: translateY(-2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+body:not(.lang-ny) .english { 
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+</style>
+
+<nav>
+    <!-- Language Toggle for Footer -->
+    <div class="footer-lang-toggle">
+        <span class="lang-option" onclick="setLanguage('en')" id="footer-lang-en">English</span>
+        <span class="lang-option" onclick="setLanguage('ny')" id="footer-lang-ny">Chichewa</span>
+    </div>
+
+    <ul id="footer-nav" class="nav nav-pills d-flex flex-row flex-wrap justify-content-center">
+        {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%}
+        {% for nav in navItems %}
+        <li class="nav-item mx-1 mb-2">
+        {% if nav.stub %}
+            <a class="nav-link text-light px-2 py-1{% if page.url == nav.stub %} active{% endif %}" href="{{ nav.stub | relative_url }}">
+                <span class="multilingual-text">
+                    <span class="lang-content english">{{ nav.display_name }}</span>
+                    <span class="lang-content chichewa">{{ nav.display_name_chichewa }}</span>
+                </span>
+            </a>
+        {%- else -%}
+        {% assign childStub = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nav.display_name' | first %}
+            <a class="nav-link text-light px-2 py-1{% if page.url == childStub.stub %} active{% endif %}" href="{{ childStub.stub | relative_url }}">
+                <span class="multilingual-text">
+                    <span class="lang-content english">{{ nav.display_name }}</span>
+                    <span class="lang-content chichewa">{{ nav.display_name_chichewa }}</span>
+                </span>
+            </a>
+        {% endif %}
+        </li>
+        {%- endfor -%}
+    </ul>
+</nav>

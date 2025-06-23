@@ -1,7 +1,7 @@
 field,index,display
 title,true,true
-date,true,true
-creator,true,false
-description,true,true
-subject,true,true
-location,true,false
+date-interviewed,true,true
+interviewer,true,true
+location,true,true
+content,true,true
+tags,true,false

@@ -1,10 +1,19 @@
 ---
-# create lunr store for search page
+# create lunr store for search page - transcripts only
 ---
-{%- assign items = site.data[site.metadata] -%}
 {%- assign fields = site.data.config-search -%}
 var store = [ 
-{%- for item in items -%} 
-{ "id": {{ item.objectid | jsonify }}, {% for f in fields %}{{ f.field | jsonify }}: {% if item[f.field] %}{{ item[f.field] | normalize_whitespace | replace: '""','"' | jsonify }}{% else %}"none"{% endif %}{% unless forloop.last %},{% endunless %}{% endfor %} }{%- unless forloop.last -%},{%- endunless -%}
+{%- for item in site.transcripts -%}
+{%- assign transcript_data = site.data.transcripts[item.object-id] -%}
+{%- assign content_text = transcript_data | map: 'words' | join: ' ' -%}
+{%- assign tags_text = transcript_data | map: 'tags' | join: ';' -%}
+{ "id": {{ item.object-id | jsonify }}, 
+  "title": {{ item.title | jsonify }},
+  "date-interviewed": {{ item.date-interviewed | jsonify }},
+  "interviewer": {{ item.interviewer | jsonify }},
+  "location": {{ item.location | jsonify }},
+  "content": {{ content_text | normalize_whitespace | jsonify }},
+  "tags": {{ tags_text | normalize_whitespace | jsonify }}
+}{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ];
