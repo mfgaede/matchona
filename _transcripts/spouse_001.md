@@ -2,14 +2,18 @@
 object-id: spouse_001
 title: Wives of WLNA Workers
 date-interviewed: July 8, 2023
-interviewer: Elias P.K. Mandala
+interviewer: by Elias P.K. Mandala
 location: Mangochi District - Fort Johnstone Hotel
 objectid: spouse_001
 ---
-{% include feature/modal.html button="Werengani mu Chichewa" color="info" title="Translation" text="**Malo**: Fort Johnstones Hotel, Mangochi District<br>
-**Tsiku**: July 8, 2023<br>
-**Ofunsa**:Elias P.K. Mandala (EM)<br>
-**Wofunsidwa**: </p>" %}
+{% include feature/modal.html button="Werengani mu Chichewa" color="info" title="Translation" text="## Azimai Omwe Amuna Awo Anapita Kagwira Ntchito Ku WNLA
+<p>Elias P.K Mandala, anachita zoyankhulana ndi kucheza ndi azaimai awa, **Mai Modesta Lingiston Brahim** (MB), **Mai Delia Baston Mawilo** (DM), **Mai Aisha Bakali** (AB), ndi **Mai Teresa Saiwala** (TS), omwe amuna awo ena anatisiya ena ali moyo panthawi ya mchezo uwu anapita kukagwira ntchito kumigodi ku South Africa pa ma kontarakiti a WNLA kapena TEBA pakati pa zaka za 1960 ndi 1980. Koma maulendo ambiri anachitika mu zaka  za ma 1970s. Zoyankhulana izi zinachitika mboma la Mangochi, komwe azimai onsewa amakhala pakadi pano. Komano, awiri mwa azimayiwa anachita kusamukira mbomali chifukwa cha mavuto azachuma.</p>
+<p>Azimai awa anafotokoza za kukula kwawo misinkhu ngati ana atsikana a alimi ang’onoang’ono omwe amayenera kugwira timaganyo ku minda ya anthu olemera ndi kugulitsa chimanga ndi chinangwa kuti apeze zofuna zawo.</p>
+<p>Azimayiwa amawathandiza amuna awo kupeza ma kontarakiti a WNLA monga amafunira amuna awo. Anafotokozanso za tsatanetsatane wa malingaliro a mavuto amakumana ndi amauna awo pa mgwirizano wa WNLA. Onse anafotokoza za kuwawa ndi maganizo posiyana ndi amuna awo akamapita ku WNLA. Komanso amawopa kuti mwina amuna awo atha kuvulala ku migodi, mwinanso kutaya miyoyo yawo, mwinanso kukwatiranso akazi ena alikunjako ku South Africa.</p>
+<p>Ambiri mwa iwo anafotokoza kuti amakhala osungulumwa amuna awo atachoka ndipo amadalira kulumikizana pa ma kalata omwe amalemberana pakati pa mamuna ndi mkazi wake. Nthawi zina ngat amai satha kulemba ndi kuwerenga amadalira azawo olo achibale owathandizira kuwerenga ndi kulemba kalata. Iwonso amati amadalira magulu othandizana a azimai omwe amuna awo anapita ku South Africa kagwira ntchito ku migodi.</p>
+<p>Azimaiwa amadalira ndi kuthokoza ndalama zomwe amuna awo amapeza ku South Africa. Izi zimawathandizira kugula ndi kumanga nyumba, kutumiza ana ku sukulu komanso kupeza zinthu zosoweka pa miyoyo yawo.</p>
+<p>Kumapeto, anafotokozanso za ndondomeko ya miyambo ndi machitidwe imatsatidwa pamene amuna awo akabwera kuchokera ku South Africa pa ulendo wina uliwonse.</p>
+<p>Azimaiwa kusiyana ndi azimbambo amene anadandaula za kuthetsedwa kwa kontarakiti ya WNLA mu chaka cha 1974, iwo awonesa maganizo osiyanasiyana kwambiri.</p>" %}
 ## Summary
 
 Elias P.K. Mandala conducted this group interview with Modesta Lingison Brahim (MB), Delia Baston Mawilo (DM), Aisha Bakali (AB), Teresa Saiwala (TS), all wives of men—some living and some deceased at the time of the interview—who traveled to South Africa with WNLA and/or TEBA between the 1960s and 1980s (with the bulk of trips taking place in the 1970s). 

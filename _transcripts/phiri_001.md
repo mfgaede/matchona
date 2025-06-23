@@ -1,6 +1,7 @@
 ---
 object-id: phiri_001
 title: Signal Phiri
+interviewer: by Henry Dee
 date-interviewed: May 30, 2014
 location: Pretoria, South Africa
 objectid: phiri_001

@@ -1,7 +1,7 @@
 ---
 object-id: mamu_001
 title: Matumula Mamu
-interviewer: in Chichewa with Elias P.K. Mandala
+interviewer: in Chichewa by Elias P.K. Mandala
 date-interviewed: April 23, 2022
 av_source: mp3
 audiovideo-id: /objects/mamu_audio_001.mp3

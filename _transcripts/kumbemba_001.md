@@ -2,7 +2,7 @@
 object-id: kumbemba_001
 title: Pearson Kumbemba, First Interview
 date-interviewed: April 23, 2022
-interviewer: in Chichewa with Elias P.K. Mandala<p>Listen to the <a href="kumbemba_002.html">Follow-up Interview</a></p>
+interviewer: in Chichewa by Elias P.K. Mandala<p>Listen to the <a href="kumbemba_002.html">Follow-up Interview</a></p>
 location: Mangochi, Malawi
 av_source: mp3
 audiovideo-id: /objects/kumbemba_audio_001.mp3

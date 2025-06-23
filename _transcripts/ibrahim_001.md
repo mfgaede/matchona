@@ -14,4 +14,4 @@ objectid: ibrahim_001
 <p>Tinacheza ndi Bambo Ibrahim ndipo  anakamba za momwe anakhalira ndi kugwira ntchito mdziko la Zimbabwe mu zaka za pakati pa 1953 ndi1988. Iwonso anatiuza za moyo wawo atabwerera kwawo ku Dedza, mdziko la Malawi.</p>" %}
 Ibrahim, born 1944. T.A. Kasumbu, Dedza District.
 
-An interview with Ibrahim in which he discusses his experience of living and working in Zimbabwe between 1953 and 1988, and life after he returned to Dedza in Malawi. 
+An interview with Ibrahim in which he discusses his experience of living and working in Zimbabwe between 1953 and 1988, and life after he returned to Dedza in Malawi.

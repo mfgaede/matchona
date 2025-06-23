@@ -13,5 +13,3 @@ objectid: denisani_001
 **Malo**: New Grade Farm,Trelawney, Zimbabwe<br>
 **Wofunsa**: Anusa Daimon<br>
 **Ulendo**: 1960" %}
-Anusa Daimon Summary of Audio Interview with
-Iliyasa, Denisani. New Grade Farm, Trelawney, 17 October 2013

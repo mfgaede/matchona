@@ -1,8 +1,8 @@
----
+s---
 object-id: galatiya_002
 title: Gilidala Galatiya Kathyole
 date-interviewed: December 2, 2008
-interviewer: in Chichewa with Lucy Phiri & Zoë Groves
+interviewer: in Chichewa by Lucy Phiri & Zoë Groves
 location: Dzoole, Malawi
 objectid: galatiya_002
 ---

@@ -2,7 +2,6 @@
 object-id: phiri_002
 title: Samuel Phiri
 date-interviewed: May 28, 2014
-interviewee: 
 interviewer: of Janet Phiri, Joseph Prolius, and Fred Prolius about Samuel Phiri by Henry Dee 
 location: Pretoria, South Africa
 objectid: phiri_002

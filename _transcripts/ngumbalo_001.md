@@ -2,7 +2,7 @@
 object-id: ngumbalo_001
 title: Harry Ngumbalo
 date-interviewed: April 24, 2022
-interviewer: in Chichewa with Elias P.K. Mandala
+interviewer: in Chichewa by Elias P.K. Mandala
 location: Mangochi, Malawi
 av_source: mp3
 audiovideo-id: /objects/masudi_audio_001.mp3

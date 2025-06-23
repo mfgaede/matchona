@@ -11,5 +11,6 @@ source "https://rubygems.org"
 # and delete the lines below.
 
 gem "jekyll"
+gem "logger"
 
 gem "webrick", "~> 1.7"

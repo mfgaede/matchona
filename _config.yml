@@ -46,7 +46,8 @@ exclude: [docs/, Rakefile, README.md, LICENSE]
 # compress CSS output
 sass:
   style: compressed
-  silence_deprecations: always
+  silence_deprecations:
+    - import
 
 ####### Leave the Below As Is ########
 
