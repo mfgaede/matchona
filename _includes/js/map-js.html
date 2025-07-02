@@ -117,7 +117,7 @@
         {% if site.data.theme.map-search == true %}/* bind feature for search */
         feature.layer = layer;{% endif %}
         // find item link
-        var itemHref = `{{ '/items/' | relative_url }}${ feature.properties.parent ? feature.properties.parent + ".html#" + feature.properties.id : feature.properties.id + ".html"}`;
+        var itemHref = `{{ '/transcripts/' | relative_url }}${ feature.properties.parent ? feature.properties.parent + ".html#" + feature.properties.id : feature.properties.id + ".html"}`;
         // find image
         var imgAlt = feature.properties.alt ? feature.properties.alt : feature.properties.title;
         var thumbImg;

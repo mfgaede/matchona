@@ -8,8 +8,17 @@ layout: default
         <h1>Interviews</h1>
           </div>
 {% for transcript in site.transcripts %}
+{%- assign transcript_items = site.data[site.metadata] | where: "parentid", transcript.object-id -%}
+{%- assign thumbnail_item = transcript_items | where_exp: "item", "item.image_thumb and item.type != 'compound_object'" | first -%}
 <div class="col-6 col-md-4 mb-3">
 <div class="card" >
+    {% if thumbnail_item.image_thumb %}
+    <div class="card-img-top" style="height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa;">
+        <img src="{{ thumbnail_item.image_thumb | relative_url }}" 
+             alt="{{ thumbnail_item.image_alt_text | default: thumbnail_item.title }}" 
+             style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    {% endif %}
     <div class="card-body">
       <h3 class="card-title">{{transcript.title}}</h3>
     

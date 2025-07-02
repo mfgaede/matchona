@@ -28,8 +28,19 @@ var idx = lunr(function () {
 function lunr_search () {
   var resultdiv = document.querySelector('#lunrResults');
   var query = document.querySelector('#lunrSearchBox').value;//.toLowerCase();
-  /* basic search that supports operators */
-  var result = idx.search(query); 
+  
+  var result;
+  
+  // If no query, show all items (for browsing)
+  if (!query || query.trim() === '') {
+    result = [];
+    for (var i = 0; i < store.length; i++) {
+      result.push({ ref: i });
+    }
+  } else {
+    /* basic search that supports operators */
+    result = idx.search(query); 
+  } 
   /* more fuzzy search, but doesn't support operators:
   var result =
     idx.query(function (q) {
@@ -47,7 +58,12 @@ function lunr_search () {
   var newresults = '<tr><td><h4 class="mt-3">' + result.length + ' Result(s) found</h4></td></tr>';
   
   function createSnippet(text, query, maxLength) {
-    if (!text || !query) return text;
+    if (!text) return '';
+    
+    // If no query (empty search), return just a brief preview
+    if (!query || query.trim() === '') {
+      return text.substring(0, 150) + (text.length > 150 ? '...' : '');
+    }
     
     var lowerText = text.toLowerCase();
     var lowerQuery = query.toLowerCase();
