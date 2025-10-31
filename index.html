@@ -3,142 +3,6 @@ title: Home
 layout: cover
 ---
 
-<!-- Homepage Styles -->
-<style>
-/* Homepage tagline styling */
-.homepage-main-tagline {
-    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-.homepage-secondary-tagline {
-    font-size: clamp(0.85rem, 2.5vw, 1rem) !important;
-    font-family: 'Fraunces', serif !important;
-    font-style: italic !important;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-}
-
-.homepage-secondary-tagline .multilingual-text,
-.homepage-secondary-tagline .lang-content {
-    font-family: 'Fraunces', serif !important;
-    font-style: italic !important;
-}
-
-/* Language toggle for homepage - centered over buttons */
-.home-lang-toggle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: clamp(0.5rem, 2vw, 1rem);
-    background: rgba(0,0,0,0.5);
-    border-radius: 20px;
-    padding: clamp(3px, 0.5vw, 4px);
-    backdrop-filter: blur(10px);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.home-lang-toggle .lang-option {
-    padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
-    border-radius: 16px;
-    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: rgba(255,255,255,0.7);
-    border: none;
-    background: transparent;
-}
-
-.home-lang-toggle .lang-option.active {
-    background: rgba(255,255,255,0.2);
-    color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.home-lang-toggle .lang-option:hover:not(.active) {
-    color: rgba(255,255,255,0.9);
-}
-
-/* Search bar for homepage */
-.home-search-bar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    margin-top: 1rem;
-}
-
-.home-search-bar .search-form {
-    display: flex;
-    background: rgba(255,255,255,0.9);
-    border-radius: 25px;
-    padding: clamp(4px, 0.8vw, 8px);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    max-width: clamp(280px, 60vw, 500px);
-    width: 100%;
-    height: clamp(36px, 8vw, 48px);
-}
-
-.home-search-bar .search-input {
-    border: none;
-    background: transparent;
-    padding: clamp(6px, 1vw, 12px) clamp(12px, 2vw, 20px);
-    flex: 1;
-    outline: none;
-    font-size: clamp(0.85rem, 2vw, 1rem);
-}
-
-.home-search-bar .search-btn {
-    background: #6c757d;
-    border: none;
-    border-radius: 20px;
-    padding: clamp(6px, 1vw, 12px) clamp(12px, 1.5vw, 20px);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-}
-
-.home-search-bar .search-btn:hover {
-    background: #5a6268;
-    transform: translateY(-1px);
-}
-
-/* Chichewa mode adjustments for homepage */
-html.lang-ny .home-search-bar .search-form {
-    max-width: clamp(260px, 55vw, 480px);
-}
-
-html.lang-ny .home-search-bar .search-input {
-    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-}
-
-/* Ensure multilingual text in buttons is centered */
-.homepage-btn .multilingual-text {
-    font-weight: bold;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-.home-lang-toggle .lang-option .multilingual-text {
-    display: inline-block;
-    text-align: center;
-}
-
-.home-search-bar .search-btn .multilingual-text {
-    display: inline-block;
-    text-align: center;
-}
-</style>
-
      {% assign nav = site.data.config-nav | map: 'stub' %}
      {% capture nav_contents %}{%for n in nav%}{{n}}{%endfor%}{% endcapture %}
 <div class="cover-container d-flex w-100 h-100 p-x3 pb-3 mx-auto flex-column align-self-center">
@@ -149,7 +13,7 @@ html.lang-ny .home-search-bar .search-input {
 
         <div class="col-md my-auto">
       <h1>
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-soundwave me-1 pt-4" viewBox="0 -2 16 16" style="width: 3em;height: 3em;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-soundwave me-1 pt-4 homepage-soundwave-icon" viewBox="0 -2 16 16">
             <path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z"/>
           </svg><br>
         <strong>
@@ -225,7 +89,7 @@ html.lang-ny .home-search-bar .search-input {
         {% assign height_float = height_integer | times: 1.0 %}
     {% assign rect-height = 100 | divided_by: height_float  %}
     {%assign transcript-name = transcript[0] %}
-    <div class="vizdiv" style="height:{{rect-height}}%">
+    <div class="vizdiv homepage-vizdiv" style="height:{{rect-height}}%">
       <a href="{{ '/subjects.html' | relative_url }}"><svg class="chart {{transcript-name}}" width="100%" height="20" style="overflow: visible">
         {% for item in transcript[1] %}
         {% assign my_integer = forloop.length %}

@@ -9,26 +9,53 @@
     var myClass = this.value;
     vizFilter(myClass);
     $("input#quicksearch").val("");
+    // Clear all previous filters and styling
     $(".line").removeClass("featured");
     $(".words").removeClass("featured");
     $(".line").removeClass("grey");
-    $(".line").addClass("grey-small");    
+    $(".line").removeClass("grey-small");
+    $(".line").removeClass("featured-filter");
     $('.line').removeClass("anchored-highlight");
-    $('div.' + myClass).removeClass("grey-small");  
-    $('div.' + myClass).addClass("featured-filter");  
-    var numberof = $('div.'+ myClass).length;
-    $("#numberoffilters").html(numberof + " related lines");
-    $('.filtercount').removeClass('d-none');  
+    // Apply new filter
+    $(".line").addClass("grey-small");
+    $('div.' + myClass).removeClass("grey-small");
+    $('div.' + myClass).addClass("featured-filter");
+
+    // Build dropdown with all matching lines
+    var itemcontainer = document.getElementById("contents-container");
+    var items = itemcontainer.getElementsByClassName("line");
+    var filterResults = '<option>Select and scroll to a matching line</option>';
+    var lineCount = 0;
+
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].classList.contains(myClass)) {
+        var itemcontents = items[i].getElementsByClassName("words")[0];
+        if (itemcontents) {
+          filterResults += '<option class="text-truncate" value="'+ i +'">Line ' + (i + 1) + ' -- ' + itemcontents.textContent.substring(0,125) + '...</option>';
+          lineCount++;
+        }
+      }
+    }
+
+    $("#searchResults").html(filterResults);
+    $("#numberof").html(lineCount + " lines match this subject");
+    $('.linecount').removeClass('d-none');
+    $('.filter-search').removeClass('d-none');
+    $("#numberoffilters").html("");
+    $('.filtercount').addClass('d-none');
+
     let url = new URL(window.location);
     let params = url.searchParams;
     params.set('filter', myClass);
     params.delete('q');
     params.delete('scene');
     var p = params.toString();
-    $('.filter-search').addClass('d-none');
     window.history.replaceState({}, '', location.pathname + '?' + p);
+  // Scroll to first filtered item with offset for sticky header
+  var targetOffset = $('.featured-filter:visible:first').offset().top;
+  var headerOffset = 200; // Adjust this value to account for sticky header and padding
   $('html, body').animate({
-    scrollTop: $('.featured-filter:visible:first').offset().top
+    scrollTop: targetOffset - headerOffset
 }, 1000);
   }
   });
@@ -65,7 +92,8 @@ $("rect").removeClass (function (index, className) {
  function filterLines() {
     $('.line').removeClass("anchored-highlight");
     $(".line").removeClass("featured");
-    $("div").removeClass("grey-small"); 
+    $("div").removeClass("grey-small");
+    $("div").removeClass("featured-filter"); // Clear subject filter when searching
     $(".line").addClass("grey");
     var input, filter, p, span, i;
     input = document.getElementById("quicksearch");
@@ -86,12 +114,13 @@ $("rect").removeClass (function (index, className) {
         if (itemcontents.innerHTML.toUpperCase().indexOf(filter) > -1) {
           itemcontents.classList.add("featured");
           itemcontents.classList.remove("grey");
-          searchResults += '<option class=text-truncate" style="max-width: 250px;" value="'+ i +'">Line ' + i + ' -- ' + itemcontents.innerHTML.substring(0,125) + '...</option>';
+          searchResults += '<option class="text-truncate" value="'+ i +'">Line ' + i + ' -- ' + itemcontents.innerHTML.substring(0,125) + '...</option>';
           itemcontents.innerHTML = itemcontents.innerHTML.replace(filterplain, "<span class='text-danger'>" + filterplain + "</span>");
           } else {
         }
       }
-      $("#filters").val($("#filters option:first").val("search filtering"));
+      // Reset subject filter dropdown to first option
+      $("#filters").val($("#filters option:first").val());
 
      var numberofint = $('.featured').length;
      $("#numberof").html(numberofint + " lines match your query");
@@ -99,7 +128,12 @@ $("rect").removeClass (function (index, className) {
      $('.linecount').removeClass('d-none');
      $('.filter-search').removeClass('d-none');
      $("#numberoffilters").html("");
-    $('.filtercount').addClass('d-none'); 
+    $('.filtercount').addClass('d-none');
+
+    // Clear filter parameter from URL since we're now searching
+    let searchUrl = new URL(window.location);
+    let searchParams = searchUrl.searchParams;
+    searchParams.delete('filter'); 
     }
   }
 

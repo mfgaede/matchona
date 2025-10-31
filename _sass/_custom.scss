@@ -1,9 +1,55 @@
-/* 
-    Put your custom SCSS here! 
+/*
+    Put your custom SCSS here!
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
-/* Language Toggle Styles */
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve focus visibility for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 2px solid #17a2b8;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: #17a2b8;
+  color: white;
+  text-decoration: none;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1em;
+}
+
+/* ========================================
+   LANGUAGE TOGGLE STYLES
+   ======================================== */
 .multilingual-text {
   position: relative;
   display: inline;
@@ -110,27 +156,61 @@ position: fixed;
   
 
 
-.toggle_int:hover{color:pink}
-.toggle_int small{font-size:12px;}
+/* Improve hover states for touch devices */
+.toggle_int:hover,
+.toggle_int:focus {
+  color: pink;
+}
 
+.toggle_int small {
+  font-size: 12px;
+}
+
+/* Ensure sufficient color contrast for featured items */
 .featured {
-    background-color: #dbf1fd !important;
-  color: black !important;
+  background-color: #dbf1fd !important;
+  color: #000 !important;
+}
+
+/* Better touch targets for mobile (min 44x44px) */
+@media (max-width: 768px) {
+  .btn,
+  button,
+  a.nav-link {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem 1rem;
+  }
+
+  .lang-option {
+    min-height: 44px;
+    padding: 0.5rem 1rem !important;
+  }
 }
 
 .btn-outline-dark:hover {
   background-color: #212529 !important;
 }
 
+/* Responsive banner with mobile optimization */
 #banner {
   width: 100%;
   height: 300px;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+
+  @media (max-width: 480px) {
+    height: 150px;
+  }
 }
 
 #banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .category-header {
@@ -151,6 +231,10 @@ position: fixed;
 .secondary-menu .nav-link {
   color: #17a2b8;
   font-size: 1.25rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 }
 
 /* Styles for the nested page sections */
@@ -170,9 +254,11 @@ position: fixed;
   color: #17a2b8;
 }
 
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling for anchor links (respects prefers-reduced-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .secondary-tagline {
@@ -208,4 +294,272 @@ circle.\31 990s, rect.\31 990s { fill: #00cec9 !important; }
 .words {
   border: none;
   box-shadow: none;
+}
+
+/* ========================================
+   HOMEPAGE STYLES
+   ======================================== */
+
+/* Homepage tagline styling */
+.homepage-main-tagline {
+  font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.homepage-secondary-tagline {
+  font-size: clamp(0.85rem, 2.5vw, 1rem) !important;
+  font-family: 'Fraunces', serif !important;
+  font-style: italic !important;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.homepage-secondary-tagline .multilingual-text,
+.homepage-secondary-tagline .lang-content {
+  font-family: 'Fraunces', serif !important;
+  font-style: italic !important;
+}
+
+/* Language toggle for homepage - centered over buttons */
+.home-lang-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  padding: clamp(3px, 0.5vw, 4px);
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-lang-toggle .lang-option {
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
+  border-radius: 16px;
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255,255,255,0.7);
+  border: none;
+  background: transparent;
+}
+
+.home-lang-toggle .lang-option.active {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-lang-toggle .lang-option:hover:not(.active),
+.home-lang-toggle .lang-option:focus:not(.active) {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Mobile optimization for language toggle */
+@media (max-width: 480px) {
+  .home-lang-toggle {
+    padding: clamp(4px, 1vw, 6px);
+  }
+
+  .home-lang-toggle .lang-option {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Search bar for homepage */
+.home-search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.home-search-bar .search-form {
+  display: flex;
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  padding: clamp(4px, 0.8vw, 8px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: clamp(280px, 60vw, 500px);
+  width: 100%;
+  height: clamp(36px, 8vw, 48px);
+}
+
+.home-search-bar .search-input {
+  border: none;
+  background: transparent;
+  padding: clamp(6px, 1vw, 12px) clamp(12px, 2vw, 20px);
+  flex: 1;
+  outline: none;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.home-search-bar .search-btn {
+  background: #6c757d;
+  border: none;
+  border-radius: 20px;
+  padding: clamp(6px, 1vw, 12px) clamp(12px, 1.5vw, 20px);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.home-search-bar .search-btn:hover,
+.home-search-bar .search-btn:focus {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Mobile optimization for search bar */
+@media (max-width: 480px) {
+  .home-search-bar {
+    margin-bottom: 1rem;
+  }
+
+  .home-search-bar .search-form {
+    max-width: 95%;
+    height: auto;
+    min-height: 44px;
+  }
+
+  .home-search-bar .search-input {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .home-search-bar .search-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Chichewa mode adjustments for homepage */
+html.lang-ny .home-search-bar .search-form {
+  max-width: clamp(260px, 55vw, 480px);
+}
+
+html.lang-ny .home-search-bar .search-input {
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+}
+
+/* Ensure multilingual text in buttons is centered */
+.homepage-btn .multilingual-text {
+  font-weight: bold;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.home-lang-toggle .lang-option .multilingual-text {
+  display: inline-block;
+  text-align: center;
+}
+
+.home-search-bar .search-btn .multilingual-text {
+  display: inline-block;
+  text-align: center;
+}
+
+/* Homepage SVG icon - responsive sizing */
+.homepage-soundwave-icon {
+  width: 3em;
+  height: 3em;
+
+  @media (max-width: 768px) {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  @media (max-width: 480px) {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+/* Homepage visualization */
+.homepage-vizdiv {
+  overflow: visible;
+}
+
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+
+/* Language toggle for footer */
+.footer-language-toggle {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  .btn {
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* ========================================
+   NAVBAR STYLES
+   ======================================== */
+
+/* Navbar brand SVG icon sizing */
+.navbar-brand .bi-soundwave {
+  width: 2em;
+  height: 2em;
+}
+
+/* ========================================
+   TRANSCRIPT PAGE STYLES
+   ======================================== */
+
+/* Filter sticky header z-index */
+#filters-search {
+  z-index: 0;
+}
+
+/* Search results dropdown options */
+#searchResults option {
+  max-width: 250px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+/* Mobile optimization for transcript filters */
+@media (max-width: 768px) {
+  #filters-search {
+    position: relative !important;
+    padding-bottom: 1rem;
+  }
+
+  .filteroptions,
+  .searchinput {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  #filters,
+  #quicksearch {
+    font-size: 16px;
+  }
+}
+
+/* Improve iframe wrapper on mobile */
+@media (max-width: 900px) {
+  .iframe-wrapper {
+    position: static;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
