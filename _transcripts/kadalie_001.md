@@ -6,7 +6,9 @@ objectid: kadalie_001
 
 ## Robert Kadalie: The Autobiography of a Malawian Immigrant in Early 20th Century South Africa
 
-{% include feature/modal.html button="Werengani mu Chichewa" color="info" title="Translation" text="<p>Mbiri ya umoyo wa Amalawi omwe anapita ku dziko la South Africa kumayambiriro a zaka za zana la 20</p>" %}
+<div class="lang-content chichewa" markdown="1">
+Mbiri ya umoyo wa Amalawi omwe anapita ku dziko la South Africa kumayambiriro a zaka za zana la 20
+</div>
 
 ### Preface
 

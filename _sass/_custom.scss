@@ -3,6 +3,54 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
+/* Language Toggle Styles */
+.multilingual-text {
+  position: relative;
+  display: inline;
+}
+
+.lang-content {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: block;
+  max-width: 90%;
+}
+
+.lang-content h2 {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Special styling for lang-content in nav items */
+.navbar .lang-content {
+  display: inline;
+  margin-bottom: .5rem;
+}
+
+/* English shown by default */
+html:not(.lang-ny) .english {
+  opacity: 1;
+  display: block;
+}
+
+html:not(.lang-ny) .chichewa {
+  opacity: 0;
+  display: none;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Chichewa shown when lang-ny class is on html */
+html.lang-ny .english {
+  opacity: 0;
+  display: none;
+  position: absolute;
+  pointer-events: none;
+}
+
+html.lang-ny .chichewa {
+  opacity: 1;
+  display: block;
+}
 
 @media print {
     
@@ -37,8 +85,28 @@ position: fixed;
   @include media-query($on-palm) {min-width: 250px;}}
 
 
-.filteroptions, .searchinput{font-size:24px; 
-  @include media-query($on-palm) { font-size:18px;}}
+.filteroptions, .searchinput{font-size:16px; 
+  @include media-query($on-palm) { font-size:14px;}}
+
+.searchinput {
+  max-width: 400px;
+}
+
+.nav-search-bar .search-form {
+  width: clamp(120px, 30vw, 280px);
+  padding: clamp(3px, 1vw, 6px);
+  height: clamp(28px, 6vw, 38px);
+}
+
+.nav-search-bar .search-input {
+  padding: clamp(3px, 0.8vw, 6px) clamp(6px, 1vw, 12px);
+  font-size: clamp(0.7rem, 1.5vw, 0.95rem);
+}
+
+.nav-search-bar .search-btn {
+  padding: clamp(3px, 0.8vw, 6px) clamp(4px, 0.8vw, 12px);
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+}
   
 
 

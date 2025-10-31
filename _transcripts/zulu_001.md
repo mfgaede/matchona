@@ -6,12 +6,35 @@ interviewer: by Elias P.K. Mandala
 location: Mangochi District - Fort Johnstone Hotel
 objectid: zulu_001
 ---
-{% include feature/modal.html button="Werengani mu Chichewa" color="info" title="Translation" text="**Malo**: Fort Johnstones Hotel, Mangochi District<br>
-**Tsiku**: October 11, 2023<br>
-**Ofunsa**:Elias P.K. Mandala (EM)<br>
-**Wofunsidwa**: Mrs. Samiyata Zulu & Mrs. Margret Alabi Mitawa</p>" %}
-The interview took place on the October 11, 2023 at the Fort Johnstone Hotel in Mangochi. The discussion began at 9 AM and was a fruitful, free-ranging discussion. 
-
-We spoke with Mrs. Margret Alabi Mitawa and Mrs. Samiyatu Zulu whose husband had travelled to South Africa on several occasions.
-
-It is for this reasons we wanted to hear their stories. Their stories are important for the future of their children and grand-children and to inform the scholarly record.
+<span class="multilingual-text">
+<span class="lang-content chichewa">
+<strong>Malo</strong>: Fort Johnstones Hotel, Mangochi District<br>
+<strong>Tsiku</strong>: October 11, 2023<br>
+<strong>Ofunsa</strong>:Elias P.K. Mandala (EM)<br>
+<strong>Wofunsidwa</strong>: Mrs. Samiyata Zulu & Mrs. Margret Alabi Mitawa
+</span>
+<span class="lang-content english">
+Elias P.K. Mandala conducted this interview with two wives of WNLA workers, Margret Alabi Mitawa and Samiyatu Zulu. Mitawa and Zulu hail from Katema and Namakumba, respectively, both within the Mangochi district. Mitawa is the wife of Alabi Mitawa while Mrs. Zulu’s husband, Mr. Zulu, died in 1996.
+</span>
+<span class="lang-content chichewa">
+Bambo Elias P.K Mandala anacheza ndi azimai awiri amene amuna awo analembedwa ntchito ndi WNLA. Iwowa ndi Mai Margret Alabi Mitawa ndi Mai Samiyatu Zulu. Mitawa ndi Zulu amachokera kudera lotchedwa Katema ndi kwa Namkumba, onsewa mboma la Mangochi. Mai Mitawa ndi mkazi wa bambo Alabi Mitawa, pomwe Mai Zulu ndi mkazi wa bambo Zulu, omwe anatisiya mu chaka cha 1996.
+</span>
+<span class="lang-content english">
+In the interview, Mitawa and Zulu discuss the beginnings of their arranged yet ultimately committed and romantic marriages. For several minutes, they discuss the brutality of the Malawi Congress Party’s hardliners in the Mangochi region immediately following independence in the 1960s as strongman Hastings Kumuzu Banda consolidated his personal power.
+</span>
+<span class="lang-content chichewa">
+Mocheza kwawo, amai Mitawa ndi Zulu anafotokoza za chiyambi chawo cha chikondi ndi mabanja awo. Iwo mu mphindi zimgapo anafotokoza za kuopsya, ndi nkhanza za otsatira a chipani cha Malawi Congress Party mboma la Mangochi kutsatira kulandira ufulu kuchokera kwa angerezi mu zaka za 1960s pamene mtsogoleri Hastings Kamuzu Banda anakhazikitsa ulamuliro wake wa mphamvu.
+</span>
+<span class="lang-content english">
+Mitawa and Zulu coincide on many points: their and their parents’ support for their husbands’ desires to sign a WNLA contract; their sadness at separating yet confidence that they and their husbands would remain loyal to each other; their fruitful participation in informal support groups with other WNLA wives; and their dedication to letter-writing back and forth with their husbands notwithstanding their formal illiteracy. Mitawa discussed the painful experience of her second child’s death while her husband was away in South Africa.
+</span>
+<span class="lang-content chichewa">
+Mai Mitawa ndi Mai Zulu onse amagwirizana pa mfundo zambiri monga: chithandizo cha makolo awo ndi kugwirizana ndi chiganizo cha  amuna awo kuti apange mgwirizano ndi WNLA; chisoni chawo posiana kapena kulekana ndi amuna awo ngakhale panali chikhulupiriro kuti amuna awo akhala okhulupirika kwa iwowo; kuthandizika kwawo pakutenga nawo gawo ku magulu a azimai othandizana pamene amuna awo anali ku WNLA; kudzipereka kwawo polemberana makalata ndi amuna awo ngakhale iwo sanali wophunzira. Mai Mitawa anafotokoza za kumva kupweteka kwambiri pamene anataya mwana wawo wachiwiri pamene amuna awo, bambo  Mitawa anali ku WNLA ku South Africa.
+</span>
+<span class="lang-content english">
+Each woman recalled being the individual recipient of her husband’s financial remittances, yet also shared the money with relatives on both sides of the family. Finally, both expressed their frustration with the end of that financial support with the labor recruitment program’s termination by Banda.
+</span>
+<span class="lang-content chichewa">
+Aliyense mwa azimayiwa anakumbukira zoti iwo ndi amene amalandira chithandizo cha ndalama kuchokera kwa amuna awo, ngakhale nawonso ankatha kugayirako azibale akuchikazi ndi akuchimuna komwe. Pomaliza, onse anawonesa kukhumudwa kwawo kuti mwayi wa chithandizo chawo cha ndalama kudzera mumgwirizano wa ntchito ndi a WNLA unathetsedwa ndi Hastings Kamuzu Banda.
+</span>
+</span>

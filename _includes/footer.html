@@ -1,58 +1,5 @@
 <footer class="bg-dark pt-4 mt-auto container-fluid">
     
-    <!-- Multilingual Footer Styles -->
-    <style>
-    /* Language content transitions for footer */
-    .multilingual-text {
-        position: relative;
-        display: inline-block;
-        transition: opacity 0.2s ease;
-    }
-
-    .lang-content {
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        display: block;
-        line-height: 1.2;
-    }
-
-    .lang-en .chichewa, 
-    .lang-ny .english { 
-        opacity: 0;
-        transform: translateY(-2px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        white-space: nowrap;
-        pointer-events: none;
-    }
-
-    .lang-en .english, 
-    .lang-ny .chichewa { 
-        opacity: 1;
-        transform: translateY(0);
-        position: relative;
-    }
-
-    /* Default to English */
-    body:not(.lang-ny) .chichewa { 
-        opacity: 0;
-        transform: translateY(-2px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        white-space: nowrap;
-        pointer-events: none;
-    }
-
-    body:not(.lang-ny) .english { 
-        opacity: 1;
-        transform: translateY(0);
-        position: relative;
-    }
-    </style>
-
     <div class="row pb-4 mb-2">
         <!-- Column 1 - title and taglines -->
         <div class="col-md-4 px-4 mt-2">

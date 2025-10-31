@@ -11,6 +11,21 @@ function site_search() {
     // Otherwise, search with the query
     window.open("{{ '/search/index.html' | relative_url }}?q=" + encodeURIComponent(query), "_self" );
 }
+
+// Update search placeholder based on language
+function updateSearchPlaceholder() {
+    const searchInput = document.getElementById("site-search");
+    if (!searchInput) return;
+    const isChichewa = document.documentElement.classList.contains('lang-ny');
+    searchInput.placeholder = isChichewa ? "Sakani..." : "Search...";
+}
+
+// Update on page load
+document.addEventListener('DOMContentLoaded', updateSearchPlaceholder);
+
+// Observe html class changes (triggered by setLanguage function)
+const observer = new MutationObserver(updateSearchPlaceholder);
+observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 </script>
 
 <!-- Navigation Search Bar with Homepage Styling -->
@@ -46,30 +61,53 @@ function site_search() {
 }
 
 .nav-search-bar .search-btn {
-    background: #6c757d;
+    background: transparent;
     border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    color: white;
+    padding: 0 10px;
+    color: #333;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
 }
 
 .nav-search-bar .search-btn:hover {
-    background: #5a6268;
-    transform: translateY(-1px);
+    color: #0066cc;
+}
+
+/* Keep search form and button positioning consistent */
+.nav-search-bar .search-form {
+    position: relative;
+}
+
+.nav-search-bar .search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    margin: 0;
+}
+
+/* Shrink search bar when Chichewa is active */
+html.lang-ny .nav-search-bar .search-form {
+    width: 240px !important;
+}
+
+html.lang-ny .nav-search-bar .search-input {
+    font-size: 0.9rem !important;
 }
 </style>
 
 <div class="nav-search-bar">
     <form class="search-form" role="search" onsubmit="site_search(); return false;">
-        <input class="search-input" type="text" id="site-search" aria-label="Search box">
-        <button class="search-btn" type="submit">
-            <span class="multilingual-text">
-                <span class="lang-content english">Search</span>
-                <span class="lang-content chichewa">Sakani</span>
-            </span>
+        <input class="search-input" type="text" id="site-search" aria-label="Search box" placeholder="Search...">
+        <button class="search-btn" type="submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
         </button>
     </form>
 </div>

@@ -8,8 +8,6 @@ filter: tags
 permalink: /subjects.html
 ---
 
-## Subjects by Category
+## <span class="multilingual-text"><span class="lang-content english">Subjects by Category</span><span class="lang-content chichewa">Mitu yophatikizana ndi Gulu</span></span>
 
-Click on one of the categories to show or hide subjects featured in interviews. Click on a subject to see all interviews featuring that subject.
-
-Click on the highlighted section to view where that subject is mentioned.
+<span class="multilingual-text"><span class="lang-content english">Click on one of the categories to show or hide subjects featured in interviews. Click on a subject to see all interviews featuring that subject.<br /><br />Click on the highlighted section to view where that subject is mentioned.</span><span class="lang-content chichewa">Dinani pa gulu limodzi kuti likuonetseni kapena kubisa mitu  ya zomwe zakambidwa mu machezedwe. Dinani pa mutu kuti muone machezedwe onse apa mutu po.<br /><br />Dinani pa gawo lomwe latsindikizidwa kuti muone pomwe mutuwo watchulidwa</span></span>
