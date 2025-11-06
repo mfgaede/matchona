@@ -6,7 +6,21 @@ layout: item/item-page-base
 gallery: true
 custom-foot: js/modal-hash-js.html
 ---
-{% assign children = site.data[site.metadata] | where_exp: 'item','item.parentid == page.objectid' %}
+{% comment %} Find children that have this item as a parent (supports multiple parent IDs separated by semicolons) {% endcomment %}
+{% assign all_items = site.data["demo-metadata"] %}
+{% assign children = "" | split: "" %}
+{% for item in all_items %}
+  {% if item.parentid %}
+    {% assign parent_ids = item.parentid | split: ";" %}
+    {% for parent_id in parent_ids %}
+      {% assign trimmed_parent = parent_id | strip %}
+      {% if trimmed_parent == page.objectid %}
+        {% assign children = children | push: item %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
 
 <div class="mb-4 ">
     

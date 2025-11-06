@@ -1,6 +1,6 @@
 {% comment %}
 
-    Adds a basic citation box for child item with reference link to the child page.
+    Adds a basic citation box for child item with reference link to the child page in MLA format.
 
 {%- endcomment -%}
 <div class="card mb-2">
@@ -8,7 +8,14 @@
     <div class="card-body">
         <dl>
             <dt>Preferred Citation:</dt>
-            <dd>"{{ child.title | default: page.title }}", {{ site.title }}, {{ site.organization-name }}</dd>
+            <dd>
+                {%- if child.citation -%}
+                    {{ child.citation }}
+                {%- else -%}
+                    {%- if child.creator -%}{{ child.creator }}. {% endif -%}
+                    "{{ child.title | default: page.title }}." <em>Matchona: Malawians on the Move in 20th Century Southern Africa</em>, {% if site.organization-name %}{{ site.organization-name }}, {% endif %}{% if child.date %}{{ child.date | date: "%-d %b. %Y" }}, {% endif %}{{ page.url | absolute_url }}#{{ child.objectid }}.
+                {%- endif -%}
+            </dd>
             <dt>Reference Link:</dt>
             <dd>{{ page.url | absolute_url }}#{{ child.objectid }}</dd>
         </dl>

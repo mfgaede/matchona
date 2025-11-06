@@ -40,7 +40,7 @@
 
                     <!-- child object modal -->
                     <div class="modal fade" id="{{ child.objectid }}" tabindex="-1" role="dialog" aria-labelledby="{{ child.objectid }}ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xxl">
+                        <div class="modal-dialog modal-fullscreen-lg-down modal-xl">
                             <div class="modal-content text-start">
 
                                 <div class="modal-header ">
@@ -56,26 +56,24 @@
                                             {% assign prev_index = prev_index | times: 1 %}
                                             {% capture next_item_id %}{{ children[next_index].objectid }}{% endcapture %}
                                             {% capture prev_item_id %}{{ children[prev_index].objectid }}{% endcapture %}
-                                            <div class="col-1 col-md-2">
-                                                <button data-bs-target="#{{ prev_item_id }}" data-bs-toggle="modal" onclick="window.location.hash='{{ prev_item_id }}'" class="btn btn-outline-dark btn-sm prev-child-button" >
-                                                    <svg class="bi icon-sprite" role="img" aria-label="Previous Item">
-                                                        <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#arrow-left"/>
-                                                    </svg>
-                                                    <span class="d-none d-md-inline">Previous Item</span>
+                                            <div class="col-auto">
+                                                <button data-bs-target="#{{ prev_item_id }}" data-bs-toggle="modal" onclick="window.location.hash='{{ prev_item_id }}'" class="btn btn-outline-dark prev-child-button d-flex align-items-center gap-2">
+                                                    <span aria-hidden="true">&larr;</span>
+                                                    <span class="d-none d-md-inline">Previous</span>
+                                                    <span class="visually-hidden">Previous Item</span>
                                                 </button>
                                             </div>
-                                            <div class="col-9 col-md-8 text-center">
-                                                <h3 class="h5">{{ page.title }} 
+                                            <div class="col text-center d-flex align-items-center justify-content-center">
+                                                <h3 class="h5 mb-0">{{ page.title }}
                                                     <span class="d-none d-md-inline">-</span><span class="d-md-none"><br></span>
                                                     Item {{ forloop.index }} of {{ children | size }}
                                                 </h3>
                                             </div>
-                                            <div class="col-1 col-md-2 text-end">
-                                                <button  data-bs-target="#{{ next_item_id }}" data-bs-toggle="modal" onclick="window.location.hash='{{ next_item_id }}'" class="ms-md-5 btn btn-outline-dark btn-sm next-child-button">
-                                                    <span class="d-none d-md-inline">Next Item</span>
-                                                    <svg class="bi icon-sprite" role="img" aria-label="Next Item">
-                                                        <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#arrow-right"/>
-                                                    </svg>
+                                            <div class="col-auto">
+                                                <button data-bs-target="#{{ next_item_id }}" data-bs-toggle="modal" onclick="window.location.hash='{{ next_item_id }}'" class="btn btn-outline-dark next-child-button d-flex align-items-center gap-2">
+                                                    <span class="d-none d-md-inline">Next</span>
+                                                    <span aria-hidden="true">&rarr;</span>
+                                                    <span class="visually-hidden">Next Item</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -83,8 +81,9 @@
                                 </div>
 
                                 <div class="modal-body">
+                                    <!-- Image/Media Section - Full Width -->
                                     <div class="row">
-                                        <div class="col-md-8">
+                                        <div class="col-12">
                                             <div class="card mb-4 text-center">
                                                 <div class="m-2">
                                                     {% if child.display_template == 'image' %}
@@ -110,16 +109,22 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                    </div>
+
+                                    <!-- Metadata Section - Left Aligned -->
+                                    <div class="row">
+                                        <div class="col-12">
                                             {% include item/child/metadata.html %}
                                         </div>
                                     </div>
-                                    <div class="row justify-content-center mt-4">
-                                        <div class="col-md-5 py-4">
+
+                                    <!-- Citation and Rights Section -->
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
                                             {% include item/child/citation-box.html %}
                                         </div>
                                         {% if child.rights or child.rightsstatement %}
-                                        <div class="col-md-5 py-4">
+                                        <div class="col-md-6">
                                             {% include item/child/rights-box.html %}
                                         </div>
                                         {% endif %}

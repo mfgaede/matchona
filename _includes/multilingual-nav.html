@@ -66,6 +66,12 @@
     white-space: nowrap;
 }
 
+/* Smaller font for Chichewa to fit on one line */
+html.lang-ny .navbar .nav-link {
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    letter-spacing: 0;
+}
+
 /* Mobile responsive sizing */
 @media (max-width: 1199px) {
     /* Responsive sizing already handled with clamp() */

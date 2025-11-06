@@ -6,15 +6,36 @@ permalink: transcripts.html
     
       <div class="row mb-5">
           <div class="col-12 my-5">
-        <h1>Interviews</h1>
+        <div class="lang-content english" markdown="1"><h1>Interviews</h1></div><div class="lang-content chichewa" markdown="1"><h1>Mafunso</h1></div>
           </div>
 {% for transcript in site.transcripts %}
-{%- assign transcript_items = site.data[site.metadata] | where: "parentid", transcript.object-id -%}
-{%- assign thumbnail_item = transcript_items | where_exp: "item", "item.image_thumb and item.type != 'compound_object'" | first -%}
+{%- comment -%} Find items that have this transcript as a parent (supports multiple parent IDs) {%- endcomment -%}
+{%- assign transcript_items = "" | split: "" -%}
+{%- assign metadata_file = site.data["demo-metadata"] -%}
+{%- for item in metadata_file -%}
+  {%- if item.parentid -%}
+    {%- assign parent_ids = item.parentid | split: ";" -%}
+    {%- for parent_id in parent_ids -%}
+      {%- assign trimmed_parent = parent_id | strip -%}
+      {%- if trimmed_parent == transcript.object-id or trimmed_parent == transcript.objectid -%}
+        {%- assign transcript_items = transcript_items | push: item -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- comment -%} Find first image item with thumbnail (excluding compound objects) {%- endcomment -%}
+{%- assign thumbnail_item = nil -%}
+{%- for item in transcript_items -%}
+  {%- if item.image_thumb and item.type != "compound_object" -%}
+    {%- assign thumbnail_item = item -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
 <div class="col-6 col-lg-3 mb-4">
 <div class="card h-100">
     <div class="d-flex justify-content-center p-3 pb-2">
-        {% if thumbnail_item.image_thumb %}
+        {% if thumbnail_item %}
         <div class="rounded" style="width: 120px; height: 120px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa;">
             <img src="{{ thumbnail_item.image_thumb | relative_url }}" 
                  alt="{{ thumbnail_item.image_alt_text | default: thumbnail_item.title }}" 

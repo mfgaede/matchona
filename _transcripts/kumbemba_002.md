@@ -6,7 +6,7 @@ interviewer: by Elias P.K. Mandala <p>Listen to the <a href="kumbemba_001.html">
 location: Mangochi, Malawi
 av_source: mp3
 audiovideo-id: /objects/kumbemba_audio_002.mp3
-objectid: kumbemba_001
+objectid: kumbemba_002
 ---
 <div class="lang-content chichewa" markdown="1">
 
