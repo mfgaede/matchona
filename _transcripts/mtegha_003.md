@@ -1,10 +1,10 @@
 ---
 object-id: mtegha_003
-title: Melrin Mtegha 
+title: Melrin Mtegha
 date-interviewed: May 9, 2014 and June 10, 2014
 interviewer: of Gilead Mtegha about Melrin Mtegha by Henry Dee
 location: Pretoria, South Africa
-objectid: mtegah_003
+objectid: mtegha_003
 ---
 <div class="lang-content chichewa" markdown="1">
 **Malo**: Pretoria, South Africa<br>

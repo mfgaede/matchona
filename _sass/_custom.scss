@@ -55,10 +55,34 @@ textarea:focus,
   display: inline;
 }
 
+/* Make multilingual-text in transcript content display as block for paragraph breaks */
+#content > p .multilingual-text {
+  display: block !important;
+  margin-bottom: 0.75rem !important;
+}
+
 .lang-content {
   transition: opacity 0.2s ease, transform 0.2s ease;
   display: block;
   max-width: 90%;
+}
+
+/* Paragraph styling for introductory/descriptive transcript content only */
+#content > p {
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+#content > p .lang-content {
+  line-height: 1.7;
+  white-space: pre-line; /* Respect line breaks in content */
+}
+
+/* Add spacing and justification for Chichewa content */
+#content > p .lang-content.chichewa {
+  text-align: justify;
+  hyphens: auto;
+  margin-bottom: 0.5rem;
 }
 
 .lang-content h2 {
@@ -69,7 +93,7 @@ textarea:focus,
 /* Special styling for lang-content in nav items */
 .navbar .lang-content {
   display: inline;
-  margin-bottom: .5rem;
+  margin-bottom: 0;
 }
 
 /* English shown by default */
@@ -99,40 +123,61 @@ html.lang-ny .chichewa {
 }
 
 @media print {
-    
-    html, body {
-      height:100%; 
-      margin: 0 !important; 
-      padding: 0 !important;
-      overflow: visible;
-      display: block;
-      font-size: 1.2rem;
-    }
+  html, body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible;
+    display: block;
+    font-size: 1.2rem;
+  }
 }
 
 
-.iframe-wrapper{
-position: fixed;
+.iframe-wrapper {
+  position: fixed;
   right: 10px;
   height: fit-content;
   width: 370px;
   bottom: 25vw;
   transition: all 1s linear;
-  .meta{display: none;}
-  .row{display: none;}
-@media (max-width: 900px) {
-    display:none;
+
+  .meta { display: none; }
+  .row { display: none; }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 }
+
+.featured {
+  display: block;
+  float: none;
+  clear: both;
+  background-color: #dbf1fd !important;
+  color: #000 !important;
 }
 
-.featured{display:block;float:none; clear:both;}
-.linenum{ font-size:11px; float:left;width:auto;}
-.words{
-  @include media-query($on-palm) {min-width: 250px;}}
+.linenum {
+  font-size: 11px;
+  float: left;
+  width: auto;
+}
 
+.words {
+  @include media-query($on-palm) {
+    min-width: 250px;
+  }
+}
 
-.filteroptions, .searchinput{font-size:16px; 
-  @include media-query($on-palm) { font-size:14px;}}
+.filteroptions,
+.searchinput {
+  font-size: 16px;
+
+  @include media-query($on-palm) {
+    font-size: 14px;
+  }
+}
 
 .searchinput {
   max-width: 400px;
@@ -153,8 +198,6 @@ position: fixed;
   padding: clamp(3px, 0.8vw, 6px) clamp(4px, 0.8vw, 12px);
   font-size: clamp(0.65rem, 1.2vw, 0.85rem);
 }
-  
-
 
 /* Improve hover states for touch devices */
 .toggle_int:hover,
@@ -164,12 +207,6 @@ position: fixed;
 
 .toggle_int small {
   font-size: 12px;
-}
-
-/* Ensure sufficient color contrast for featured items */
-.featured {
-  background-color: #dbf1fd !important;
-  color: #000 !important;
 }
 
 /* Better touch targets for mobile (min 44x44px) */
@@ -263,14 +300,13 @@ position: fixed;
 
 .secondary-tagline {
   font-size: 1.2rem;
-  font-style: italic!important;
+  font-style: italic !important;
   color: rgba(255, 255, 255, 0.8);
   margin-top: -0.5rem;
   margin-bottom: 1rem;
 }
 
-/* Custom colors for Key event tags */
-
+/* Custom colors for key event tags */
 circle.\31 920s, rect.\31 920s { fill: #ff6b6b !important; }
 circle.\31 930s, rect.\31 930s { fill: #48dbfb !important; }
 circle.\31 940s, rect.\31 940s { fill: #1dd1a1 !important; }
