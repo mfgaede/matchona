@@ -47,6 +47,8 @@ google-analytics-id: G-KCD6Y742EN
 #
 # ignore stuff
 exclude: [docs/, Rakefile, README.md, LICENSE]
+# include folders that are git-ignored but needed for the site
+include: [objects/]
 # compress CSS output
 sass:
   style: compressed

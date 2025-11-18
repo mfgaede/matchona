@@ -26,6 +26,8 @@ You may use the contents of this site for educational purposes without seeking p
 
 All other rights are reserved. Please contact [mfgaede@uoregon.edu](mailto:mfgaede@uoregon.edu?subject=Matchona%20permissions%20question) with questions about use.
 
+<div class="lang-content english" markdown="1">
+
 ## Takedown Request
 
 The oral histories and contextual materials made available on *Matchona* have been collected for the benefit of scholars, students, and the families and communities of those who have shared their stories. We have made every effort to accurately and respectfully present the contents of the interviews in Chichewa and in translation.  
@@ -35,6 +37,24 @@ Please note that we are unable to take action against third parties who have obt
 If materials are taken down in the future, we are unable to retroactively retract the educational permissions that existed while those materials were available on *Matchona*. For example, we cannot require a podcast excerpting an oral history be taken down.  
 
 If you have a concern about any of the materials on *Matchona*, please contact [mfgaede@uoregon.edu](mailto:mfgaede@uoregon.edu?subject=Takedown%20request).
+
+</div>
+
+<div class="lang-content chichewa" markdown="1">
+
+## Pempho Lochotsa
+
+Mbiri za pakamwa ndi zolembedwa zimene zatoledwa, kusungidwa mosamala zomwe zikupezeka pa Matchona, zachitika ndi cholinga chofuna kuthandizira akatswiri, ophunzira ndi ma banja a anthu amene asunga ndi kugawana nafe pa ma pamacheza athu.
+
+Tinayesetsa mwandongosolo ndi mwa ulemu wake kupereka zonze tapeza pa macheza athu mu Chichewa komanso ndi momasuliridwa mu chizungu.
+
+Chonde dziwani kuti sitingathe kuchitako kanthu motsutsana ndi anthu ena omwe adapeza zinthu mosayenera kapena mosaloledwa ndipo akudzigwiritsa ntchitomu njira zosemphana ndi mfundozathu.
+
+Ngati zida kapena zipangizo zidzachotsedwa mtsongolomu, ife sitingathe kubwezeretsa zilolezo zomwe zidalipo pomwe  ziipangizo zinalipo pa Matchona. Mwachitsanzo, ife sitingathe kuteroko kuchotsa podikasiti yomwe ndi yotulutsa mbiri yapakamwa.
+
+Koma ngati muli ndi nkhawa ndi chilichonse mwazinthu zomwe zili pa  Matchona, chonde lemberani awa: mfgaede@uoregon.edu.
+
+</div>
 
 ## Harmful Content
 

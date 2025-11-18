@@ -117,13 +117,13 @@ Boeder, Robert Benson. "Malawian labour migration and international relations in
 
 <h2 id="C" class="letter-heading exclude-from-nav">C</h2>
 
-Chirwa, W. C. "Jailing the Voiceless: Ex-Migrant Workers and Population Struggles in Malawi". *Nordic Journal of African Studies*, vol. 8, no. 1, June 1999, p. 20, <https://doi.org/10.53228/njas.v8i1.640>
+Chirwa, Wiseman Chijere. "Jailing the Voiceless: Ex-Migrant Workers and Population Struggles in Malawi". *Nordic Journal of African Studies*, vol. 8, no. 1, June 1999, p. 20, <https://doi.org/10.53228/njas.v8i1.640>
 
 Chirwa, Wiseman Chijere. "'No TEBA...Forget TEBA': The Plight of Malawian Ex-migrant Workers to South Africa, 1988-1994." *The International Migration Review,* vol. 31, no. 3, 1996, pp. 628–54. <https://doi.org/10.2307/2547289>
 
 Chirwa, Wiseman Chijere. "The Malawi Government and South African Labour Recruiters, 1974-92." *The Journal of Modern African Studies*, vol. 34, no. 4, 1996, pp. 623–42. <http://www.jstor.org/stable/161592>  
 
-Chirwa, W.C. *"'Theba' is Power": Rural Labour, Migrancy and Fishing in Malawi, 1890s-1985.* (Queen's University thesis, 1992). <https://search.worldcat.org/title/30863767> {% include feature/button.html text="Download PDF" link="objects/chirwa_thesis.pdf" %}
+Chirwa, Wiseman Chijere. *"'Theba' is Power": Rural Labour, Migrancy and Fishing in Malawi, 1890s-1985.* (Queen's University thesis, 1992). <https://search.worldcat.org/title/30863767> {% include feature/button.html text="Download PDF" link="objects/chirwa_thesis.pdf" %}
 
 <h2 id="D" class="letter-heading exclude-from-nav">D</h2>
 

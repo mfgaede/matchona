@@ -268,10 +268,47 @@ html.lang-ny .chichewa {
 .secondary-menu .nav-link {
   color: #17a2b8;
   font-size: 1.25rem;
+  position: relative;
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
   }
+}
+
+/* Make secondary menu h4 position relative for absolute positioning of lang content */
+.secondary-menu h4 {
+  position: relative;
+}
+
+/* Ensure proper display for multilingual content in secondary menu and page titles */
+html:not(.lang-ny) .secondary-menu .english,
+html:not(.lang-ny) .page-title .english {
+  display: block;
+  opacity: 1;
+  position: relative;
+}
+
+html:not(.lang-ny) .secondary-menu .chichewa,
+html:not(.lang-ny) .page-title .chichewa {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+html.lang-ny .secondary-menu .english,
+html.lang-ny .page-title .english {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+html.lang-ny .secondary-menu .chichewa,
+html.lang-ny .page-title .chichewa {
+  display: block;
+  opacity: 1;
+  position: relative;
 }
 
 /* Styles for the nested page sections */
