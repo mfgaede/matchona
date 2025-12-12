@@ -4,7 +4,7 @@ title: Daih Mtegha
 date-interviewed: May 9, 2014 and June 10, 2014
 interviewer: of Gilead Mtegha about Daih Mtegha by Henry Dee
 location: Pretoria, South Africa
-objectid: mtegah_002
+objectid: mtegha_002
 ---
 <div class="lang-content chichewa" markdown="1">
 **Malo**: Pretoria, South Africa<br>
