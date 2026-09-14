@@ -8,10 +8,12 @@ permalink: bibliography.html
 
 <style>
 /* Bibliography hanging indents */
-.content p {
+.content p, p {
+  display: block;
   padding-left: 2em;
   text-indent: -2em;
-  margin-bottom: 1em;
+  padding-bottom: .75em;
+  border-bottom: 1px solid transparent;
   line-height: 1.9em;
   word-wrap: break-word; /* Allow long words to break */
   overflow-wrap: break-word; /* Modern version of word-wrap */
@@ -24,9 +26,15 @@ permalink: bibliography.html
 }
 
 /* Fix for bootstrap buttons */
-.content p .btn {
+.content p .btn, p .btn {
+  display: inline-block;
   text-indent: 0;
   margin-left: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-break: normal; /* Don't break button text */
+}
+  width: fit-content;
   word-break: normal; /* Don't break button text */
 }
 
@@ -59,7 +67,7 @@ permalink: bibliography.html
   font-size: 1.75rem;
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -91,7 +99,7 @@ permalink: bibliography.html
 }
 </style>
 
-*Last updated January 2025*
+*Last updated September 2026*
 
 <!-- Alphabetical navigation -->
 <div class="alpha-nav">
@@ -105,6 +113,8 @@ permalink: bibliography.html
   <a href="#M">M</a>
   <a href="#N">N</a>
   <a href="#P">P</a>
+  <a href="#R">R</a>
+  <a href="#W">W</a>
 </div>
 
 <h2 id="B" class="letter-heading exclude-from-nav">B</h2>
@@ -126,6 +136,8 @@ Chirwa, Wiseman Chijere. "The Malawi Government and South African Labour Recruit
 Chirwa, Wiseman Chijere. *"'Theba' is Power": Rural Labour, Migrancy and Fishing in Malawi, 1890s-1985.* (Queen's University thesis, 1992). <https://search.worldcat.org/title/30863767> {% include feature/button.html text="Download PDF" link="objects/chirwa_thesis.pdf" %}
 
 <h2 id="D" class="letter-heading exclude-from-nav">D</h2>
+
+Daimon, Anusa, Henry Dee, Franny Gaede, Zoë Groves, and Julie Weise. “Digital Archiving of Southern African Oral Histories: Lessons from Matchona.org,” *The Oral History Review*, 2027. (in press)
 
 Daimon, Anusa. "'Ringleaders and Troublemakers'. Malawian (Nyasa) migrants and transnational labor movements in Southern Africa, c.1910–1960." *Labor History*, vol. 58, no. 5, 2017, pp. 656–75. <https://doi.org/10.1080/0023656X.2017.1350537>  
 
@@ -192,6 +204,18 @@ Nkhoma, Bryson Gwiyani. "Transnational Threats: The Problem of Illegal Immigrati
 <h2 id="P" class="letter-heading exclude-from-nav">P</h2>
 
 Pachai, Brigdlal. *The Malawi Diaspora and Elements of Clements Kadali*. Central African Historical Association, 1969. <https://discovered.ed.ac.uk/permalink/44UOE_INST/n9c0l6/alma995053303502466> {% include feature/button.html text="Download PDF" link="objects/pachai001.pdf" %}
+
+<h2 id="R" class="letter-heading exclude-from-nav">R</h2>
+
+Risam, Roopika. "Review of Matchona: Malawians on the Move in Twentieth Century Africa." *Reviews in Digital Humanities,* 2026. <https://reviewsindh.pubpub.org/pub/matchona>
+
+<h2 id="W" class="letter-heading exclude-from-nav">W</h2>
+
+Weise, Julie M. “Gender and the Bracero Program: New Perspectives from Europe and Africa.” *Relaciones*, 2026. (in press)
+
+Weise, Julie M. “Citizenship and Autonomy: Bilateral Labour Migration Governance and its Discontents in Malawi, Mexico, and Spain, 1919-75.” *Journal of Global History*, 2027. <https://doi.org/10.1017/S1740022826100527>
+
+Weise, Julie M. “Dead Ends and Passageways: ‘Temporary’ Migrant Workers in the Long 1970s" in *The Global Migration Turn and the New International Order in the Long 1970s*. Editors Simone Paoli and Emmanuel Comte, 27–41. Routledge, 2026. <https://doi.org/10.4324/9781003706311>
 
 <!-- Back to top button -->
 <button id="back-to-top" class="back-to-top" title="Back to top">↑</button>
